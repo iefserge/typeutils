@@ -1,6 +1,18 @@
 var test = require('tape');
 var typeutils = require('./');
 
+test('isUndefined', function(t) {
+  t.equal(typeutils.isUndefined(), true);
+  t.equal(typeutils.isUndefined(void 0), true);
+  t.equal(typeutils.isUndefined(true), false);
+  t.equal(typeutils.isUndefined(false), false);
+  t.equal(typeutils.isUndefined(null), false);
+  t.equal(typeutils.isUndefined({}), false);
+  t.equal(typeutils.isUndefined([]), false);
+  t.equal(typeutils.isUndefined(5.5), false);
+  t.end();
+});
+
 test('isFunction', function(t) {
   function fn() {}
   t.equal(typeutils.isFunction(fn), true);

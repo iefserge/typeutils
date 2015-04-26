@@ -1,3 +1,9 @@
+var isUndefined = function(value) {
+  return value === void 0;
+};
+
+exports.isUndefined = isUndefined;
+
 var isFunction = function(obj) {
   return typeof obj == 'function' || false;
 };

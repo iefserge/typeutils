@@ -9,6 +9,7 @@ Super lightweight JavaScript typecheck library for primitive values.
 ```js
 var typeutils = require('typeutils');
 
+typeutils.isUndefined()               // true
 typeutils.isFunction(function() {})   // true
 typeutils.isObject({})                // true
 typeutils.isArray([1, 2, 3])          // true
