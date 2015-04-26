@@ -2,6 +2,8 @@
 
 Super lightweight JavaScript typecheck library for primitive values.
 
+[![Build Status](https://travis-ci.org/iefserge/typeutils.svg)](https://travis-ci.org/iefserge/typeutils)
+
 ## USAGE
 
 ```js
