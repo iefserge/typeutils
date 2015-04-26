@@ -16,6 +16,8 @@ typeutils.isInteger(10)               // true
 typeutils.isString('hello')           // true
 typeutils.isNumber(-0.2)              // true
 typeutils.isBoolean(false)            // true
+
+typeutils.isArrayOf([1, 2, 3], typeutils.isInteger) // true
 ```
 
 Note: primitive value wrapper objects are intentionally ignored:

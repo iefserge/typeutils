@@ -98,3 +98,19 @@ test('isBoolean', function(t) {
   t.equal(typeutils.isBoolean(new Boolean(true)), false);
   t.end();
 });
+
+test('isArrayOf', function(t) {
+  t.throws(function() {
+    typeutils.isArrayOf([1, 2, 3.4]);
+  });
+  t.equal(typeutils.isArrayOf([1, 2, 3], typeutils.isInteger), true);
+  t.equal(typeutils.isArrayOf([1, 2, 3.4], typeutils.isInteger), false);
+  t.equal(typeutils.isArrayOf([true, false], typeutils.isBoolean), true);
+  t.equal(typeutils.isArrayOf([], typeutils.isBoolean), true);
+  t.equal(typeutils.isArrayOf([], typeutils.isString), true);
+  t.equal(typeutils.isArrayOf(['a', 'b', 'c'], typeutils.isString), true);
+  t.equal(typeutils.isArrayOf(null, typeutils.isString), false);
+  t.equal(typeutils.isArrayOf(void 0, typeutils.isString), false);
+  t.equal(typeutils.isArrayOf([1, 1], function(x) { return x === 1 }), true);
+  t.end();
+});
