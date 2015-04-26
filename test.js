@@ -126,3 +126,16 @@ test('isArrayOf', function(t) {
   t.equal(typeutils.isArrayOf([1, 1], function(x) { return x === 1 }), true);
   t.end();
 });
+
+test('testInstanceOf', function(t) {
+  function A() {}
+  t.equal(typeutils.isArrayOf([new A(), new A()], typeutils.testInstanceOf(A)), true);
+  t.equal(typeutils.isArrayOf([new A(), null], typeutils.testInstanceOf(A)), false);
+  t.end();
+});
+
+test('testArrayOf', function(t) {
+  t.equal(typeutils.isArrayOf([[1], [2]], typeutils.testArrayOf(typeutils.isInteger)), true);
+  t.equal(typeutils.isArrayOf([[1], null], typeutils.testArrayOf(typeutils.isInteger)), false);
+  t.end();
+});

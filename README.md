@@ -18,7 +18,11 @@ typeutils.isString('hello')           // true
 typeutils.isNumber(-0.2)              // true
 typeutils.isBoolean(false)            // true
 
-typeutils.isArrayOf([1, 2, 3], typeutils.isInteger) // true
+typeutils.isArrayOf([1, 2, 3], typeutils.isInteger)                         // true
+typeutils.isArrayOf([[1], [2]], typeutils.testArrayOf(typeutils.isInteger)) // true
+function A() {}
+typeutils.isArrayOf([new A(), new A()], typeutils.testInstanceOf(A))        // true
+
 ```
 
 Note: primitive value wrapper objects are intentionally ignored:

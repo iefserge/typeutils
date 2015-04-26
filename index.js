@@ -18,7 +18,7 @@ exports.isObject = function(obj) {
 var isArray = Array.isArray;
 exports.isArray = isArray;
 
-exports.isArrayOf = function(value, fn) {
+var isArrayOf = function(value, fn) {
   if (!isArray(value)) {
     return false;
   }
@@ -35,6 +35,8 @@ exports.isArrayOf = function(value, fn) {
 
   return true;
 };
+
+exports.isArrayOf = isArrayOf;
 
 // Number.isInteger polyfill
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/isInteger
@@ -53,4 +55,16 @@ exports.isNumber = function(value) {
 
 exports.isBoolean = function(value) {
   return value === true || value === false;
+};
+
+exports.testInstanceOf = function(type) {
+  return function(value) {
+    return value instanceof type;
+  };
+};
+
+exports.testArrayOf = function(fn) {
+  return function(value) {
+    return isArrayOf(value, fn);
+  };
 };
