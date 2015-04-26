@@ -1,0 +1,27 @@
+{
+  "name": "typeutils",
+  "version": "0.1.0",
+  "description": "Super lightweight JavaScript typecheck library",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:iefserge/typeutils.git"
+  },
+  "keywords": [
+    "is",
+    "typecheck",
+    "type"
+  ],
+  "author": "Sergii Iefremov <iefserge@runtimejs.org>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/iefserge/typeutils/issues"
+  },
+  "homepage": "https://github.com/iefserge/typeutils",
+  "devDependencies": {
+    "tape": "^4.0.0"
+  }
+}
