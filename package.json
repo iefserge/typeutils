@@ -1,6 +1,6 @@
 {
   "name": "typeutils",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Super lightweight JavaScript typecheck library",
   "main": "index.js",
   "scripts": {
