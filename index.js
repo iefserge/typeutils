@@ -1,3 +1,5 @@
+'use strict';
+
 var isUndefined = function(value) {
   return value === void 0;
 };
